@@ -20,8 +20,8 @@ Um microserviço para realizar transferência entre contas correntes utilizando:
 https://raw.githubusercontent.com/emanuelfqueiroz/ebank-account/master/docs/DatabaseDiagram.png)
 
 - Índices e Restrições de Banco
-  
-    ![Indices](https://github.com/emanuelfqueiroz/ebank-account/raw/master/docs/Unique%20_Indexes.png)
+
+![Indices](https://github.com/emanuelfqueiroz/ebank-account/raw/master/docs/Unique%20_Indexes.png)
 
 ### TO DO
 
