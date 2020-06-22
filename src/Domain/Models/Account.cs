@@ -21,8 +21,10 @@ namespace Domain.Models
         {
             this.Balance += increment;
         }
-        public Account() { }
-        public Account(decimal balance)
+        public Account() {
+            Id = Guid.NewGuid();
+        }
+        public Account(decimal balance) : this()
         {
             Balance = balance;
         }
