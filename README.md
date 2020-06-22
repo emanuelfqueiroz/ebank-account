@@ -74,7 +74,7 @@ Desafios:
 - Backups / versionamentos de apis/ Disaster Recovery/ api keys / segurança e autenticação / etc...
 - Shotgun efect: quando uma simples modificação afeta multiplos microserviços
 
-:: Microserviços não são aconselhados em pequenas/médias aplicações ou quando não a escalabilidade não é um fator essencial.
+:: Microserviços não são aconselhados em pequenas/médias aplicações ou quando a escalabilidade não é um fator essencial.
 
 ### Requisição Síncrona vs Assíncrona [ASP.NET]
 
