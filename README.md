@@ -1,6 +1,6 @@
 # ebank-account
 
-## PROJETO
+## Projeto
 
 Um microserviço para realizar transferência entre contas correntes utilizando:
 
