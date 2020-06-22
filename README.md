@@ -7,6 +7,9 @@ Um microserviço para realizar transferência entre contas correntes utilizando:
 - DDD + CQRS
 - EF Core
 - Swagger
+- Shared Library : Criei uma biblioteca de CQRSHelper para ser utilizada nesse e nos próximos microserviços
+  - <https://github.com/emanuelfqueiroz/cqrs-helper>
+  - <https://www.nuget.org/packages/CQRSHelper/1.0.1>
 
 - Camadas
 ![Estrutura](github.com/emanuelfqueiroz/ebank-account/raw/master/docs/Estrutura.png)
