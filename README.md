@@ -33,7 +33,9 @@ https://raw.githubusercontent.com/emanuelfqueiroz/ebank-account/master/docs/Data
 - Criar e registrar Imagens no DockerHub
 - Implementação de Segurança utilizando JWT
 - Melhorar Testes da camada de aplicação
-- Tratamento de Concorrência/Semáforos das contas que realizam a transferência bancária
+- Transação desde a leitura das contas;
+  - usar Database Isolation level serializable?
+  - pesquisar solução
 
 ## Desenvolvimento de Software
 

@@ -35,8 +35,6 @@ namespace Application.Transfer.Commands
                 return response;
             }
 
-            //check for lock
-            //Lock depositor and beneficiary
             DomainValidation dValidation = DomainValidation.Success;
             var transfer = await LoadAsync(cmd, dValidation);
             if (!dValidation.IsSuccess)
@@ -56,7 +54,6 @@ namespace Application.Transfer.Commands
 
                 return response;
             }
-            //unlock depositor and beneficiary : on Dispose Handler or try-finally or with using 
             return response;
         }
 
