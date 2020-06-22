@@ -12,9 +12,11 @@ Um microserviço para realizar transferência entre contas correntes utilizando:
   - <https://www.nuget.org/packages/CQRSHelper/1.0.1>
 
 - Camadas
-![Estrutura](github.com/emanuelfqueiroz/ebank-account/raw/master/docs/Estrutura.png)
+  
+    ![Estrutura](https://github.com/emanuelfqueiroz/ebank-account/raw/master/docs/Estrutura.png)
+
 - Diagrama
-![Digrama](
+    ![Digrama](
 https://raw.githubusercontent.com/emanuelfqueiroz/ebank-account/master/docs/DatabaseDiagram.png)
 
 - Índices e Restrições de Banco:
