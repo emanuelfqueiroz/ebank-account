@@ -1,4 +1,5 @@
-﻿using Application.Transfer.Commands;
+﻿using Application.Account.AccountQuery;
+using Application.Transfer.Commands;
 using CQRSHelper._Common;
 using Domain.Repositories;
 using InfraStructure.Repositories;
@@ -20,19 +21,12 @@ namespace InfraStructure.DI
             services.AddScoped<IAccountRepository, AccountRepository>();
             services.AddScoped<ITransferRepository, TrasnferRepository>();
 
+            setMediator(typeof(AccountQueryHandler));
             setMediator(typeof(TrasnferCommandHandler));
-
             //foreach (var item in CQRSHelper.Loader.GetAll())
             //{
             //    setMediator(item);
             //}
-            //foreach (var item in GetAll())
-            //{
-
-            //    setMediator(item);
-            //}
-
-
         }
 
         public static Assembly[] GetAll()

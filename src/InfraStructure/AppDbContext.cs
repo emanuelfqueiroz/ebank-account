@@ -25,11 +25,15 @@ namespace InfraStructure
             
             var account = modelBuilder.Entity<Account>();
             account.HasKey(a => a.Id);
+            
           
             account.Property(b => b.Balance)
                 .IsRequired()
                 .HasColumnType(nameof(SqlDbType.Money));
             account.Property(b => b.Agency).HasMaxLength(20);
+            
+            account.HasIndex(u => new { u.Agency, u.AccountNumber }).IsUnique();
+
             account.Property(b => b.AccountNumber).HasMaxLength(20);
 
             modelBuilder.Entity<Transfer>()
@@ -38,7 +42,7 @@ namespace InfraStructure
                 .Property(b => b.Amount)
                 .HasColumnType(nameof(SqlDbType.Money));
 
-            base.OnModelCreating(modelbuilder);
+            base.OnModelCreating(modelBuilder);
         }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Transfer> Trasnfers { get; set; }

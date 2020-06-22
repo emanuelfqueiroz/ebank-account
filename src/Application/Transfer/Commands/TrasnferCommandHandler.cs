@@ -73,7 +73,10 @@ namespace Application.Transfer.Commands
         /// <returns>Transfer</returns>
         private async Task<Domain.Models.Transfer> LoadAsync(TransferCommand cmd, DomainValidation vld)
         {
-            var transfer = new Domain.Models.Transfer();
+            var transfer = new Domain.Models.Transfer()
+            {
+                Amount = cmd.Amount,
+            };
 
             var beneficiary = await _accountRepo.GetAsync(
                 agency: cmd.Beneficiary.Agency,
