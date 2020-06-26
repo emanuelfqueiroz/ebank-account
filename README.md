@@ -40,8 +40,10 @@ https://raw.githubusercontent.com/emanuelfqueiroz/ebank-account/master/docs/Data
 
 ### PROJETO SIMILAR
 
-Segue um projeto pessoal que encontra a menor rota possível [Algoritmo de Dijkstra]
+Segue um projeto pessoal que encontra a menor rota possível utilizando o algoritmo de Dijkstra.
+
 https://gitlab.com/emanuelfqueiroz/routes-project
+
 ![Estrutura](https://gitlab.com/emanuelfqueiroz/routes-project/-/raw/master/doc/images//project_struture.png)
 
 
