@@ -12,6 +12,7 @@ Um microserviço para realizar transferência entre contas correntes utilizando:
     - <https://github.com/emanuelfqueiroz/cqrs-helper>
     - <https://www.nuget.org/packages/CQRSHelper/1.0.1>
 
+
 - Camadas
   
     ![Estrutura](https://github.com/emanuelfqueiroz/ebank-account/raw/master/docs/Estrutura.png)
@@ -37,19 +38,25 @@ https://raw.githubusercontent.com/emanuelfqueiroz/ebank-account/master/docs/Data
   - usar Database Isolation level serializable?
   - pesquisar solução
 
+### PROJETO SIMILAR
+
+Segue um projeto pessoal que encontra a menor rota possível [Algoritmo de Dijkstra]
+https://gitlab.com/emanuelfqueiroz/routes-project
+![Estrutura](https://gitlab.com/emanuelfqueiroz/routes-project/-/raw/master/doc/images//project_struture.png)
+
+
 ## Desenvolvimento de Software
 
 ### DDD
 
-Aplicações legadas sofrem em expressar as responsabilidades da aplicação. Visualizamos códigos procedurais onde as regras de negócio são distribuídas no banco de dados, em controllers e em views.
+Aplicações legadas sofrem em expressar as responsabilidades da aplicação. Encontramos códigos procedurais com regras de negócio distribuídas em banco de dados, controllers, views e em qualquer outra camada.
 
-Domain-driven-design é uma abordagem que foca em evidenciar o domínio da aplicação. Ou seja, os processos do mundo real são representados em um único lugar: no domínio da aplicação.
-
-Apresenta também as boas práticas para o domínio: liguagem ubiqua, bounded contexts, shared kernel e  independência outras estruturas como persistência, infra, controllers, serviços e views.
+Domain-driven-design é uma abordagem que foca em evidenciar o domínio da aplicação. Ou seja, os processos do mundo real são representados especificamente na camada de domínio utilizando boas práticas como: liguagem ubiqua, bounded contexts, shared kernel e, principalmente, independência de outras camadas como por exemplo: persistência.
 
 ### Arquitetura de Microserviços
 
-Segragação de um Sistema em contextos/domínios bem definidos. Cada domínio passa a ser aplicação interdependente que se comunica com as demais via http (geralmente).
+A arquitetura de `microservices` segrega um sistema corporativo em diversas aplicações com contextos/domínios bem definidos. 
+Cada aplicação é estruturalmente independente porém atua de forma colaborativa com as demais aplicações.
 
 Vantagens:
 
@@ -59,12 +66,13 @@ Vantagens:
 - Facilita a evolução do sistema.  Ex: alterar banco de dados, linguagem, versão de um framework
 - Pode ajudar na organização de equipes/squads
 - Permite estratégias de release como Blue-green/ canary release/ testes AB
+- Desconstroi os problemáticos "monólitos"...
 
 Desafios:
 
-- Exige maior maturidade do time
+- Exige maior maturidade do time/squad
 - Maior complexidade na orquestração da aplicação e na realização de testes integrados 
-- **Coreografia**  de Serviços
+- Exige **Coreografia**  entre os serviços
 - Pode ser mais difícil compreender o sistema como um todo
 - Exige novas boas práticas:
 - Trackear requisições de ponta a ponta. ex: correlationalIds
@@ -81,11 +89,10 @@ Desafios:
 
 ### Requisição Síncrona vs Assíncrona [ASP.NET]
 
-Na comunicação síncrona, as threads ficam bloqueadas aguardando as respostas de IO.
+Na comunicação síncrona, as threads ficam bloqueadas aguardando respostas de IO.
 
-Para melhorar o aproveitamento do processador e recursos do Thread pool utilizamos chamadas assincronas [seguindo o padrão *"TAP Pattern"*].
-Quando a requisição precisa esperar por IO ela "hiberna" ,libera a thread e só retorna após a resposta de IO.
+Ao utilizar chamadas assíncronas, a requisição não precisa esperar por IO [bloqueando a thread]: ela "hiberna", libera a thread para outras requisições e só retorna após a respectiva resposta.
 
-Geralmente se usa chamdas assincronas para melhorar o aproveitamento da "thread pool" e evitar Alto percentual de threads paradas aguardando IO.
+Geralmente se usa chamdas assincronas para melhorar o aproveitamento da "thread pool" e evitar alto percentual de threads paradas aguardando IO.
 
-Evita-se chamadas assíncronas quando em alguns cenários onde há custo elevado na "troca de contexto" [dados em memória], em requests que exigem focadas em CPU [baixo ou nenhum IO] ou quando a capacidade de IO é menor que o volume de requisições.
+Evita-se chamadas assíncronas nos cenários onde há custo elevado na "troca de contexto" [dados em memória], em requests que são exclusivamente de CPU [baixo ou nenhum IO] ou quando a capacidade de IO é menor que o volume de requisições.
