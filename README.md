@@ -41,7 +41,7 @@ https://raw.githubusercontent.com/emanuelfqueiroz/ebank-account/master/docs/Data
 ### PROJETO SIMILAR
 
 Segue um projeto pessoal que encontra a menor rota possível utilizando o algoritmo de Dijkstra. 
-[disponibilizado com **Dockerfiles**]
+[disponibilizado com **Docker**]
 
 https://gitlab.com/emanuelfqueiroz/routes-project
 
