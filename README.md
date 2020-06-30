@@ -38,7 +38,7 @@ https://raw.githubusercontent.com/emanuelfqueiroz/ebank-account/master/docs/Data
   - Como a transacao ocorre em  1 microservico podemos usar uma transação de banco de dados com Isolation level serializable [necessário avaliar impactos devido a maior possbilidade de locks]
   - "distributed transactions" e locks das contas em cache por exemplo. [Necessário avaliar]
 
-### PROJETO SIMILAR
+### PROJETOS SIMILARES
 
 ### Route Finder
 Segue um projeto pessoal que encontra a menor rota possível utilizando o algoritmo de Dijkstra. 
